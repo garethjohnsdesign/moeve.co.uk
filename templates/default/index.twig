@@ -1,0 +1,32 @@
+{% set bodyClass = 'home' %}
+
+{% if entry.seoTitle | length %}
+{% set seoTitle = entry.seoTitle %}
+{% else %}
+{% set seoTitle = entry.title %}
+{% endif %}
+
+{% if entry.seoDescription | length %}
+{% set seoDescription = entry.seoDescription %}
+{% endif %}
+
+{% extends "default/_layouts/site" %}
+
+{% block navigation %}
+{% include "_includes/global/navigation--home" %}
+{% endblock %}
+
+{% block main %}
+
+<div class="grid-container">
+   <div class="grid-x grid-padding-x padding-top-1 align-center">
+      <div class="small-12 medium-6 cell text-center">
+      <h1 class="text-uppercase">{{ currentSite.name }}.</h1>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "_includes/global/footer" %}
+{% endblock %}
